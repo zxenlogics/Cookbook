@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cookbook.Web", "Cookbook.Web\Cookbook.Web.csproj", "{1FC084D4-695D-428B-98BB-7E3D71246986}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cookbook.Web.Tests", "Cookbook.Web.Tests\Cookbook.Web.Tests.csproj", "{DADE4BA4-2659-4C5F-BCB2-2A3D730BD2BC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cookbook.DataAccess", "Cookbook.DataAccess\Cookbook.DataAccess.csproj", "{6314104C-3907-4646-8E9E-0A3776FA0F63}"
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1FC084D4-695D-428B-98BB-7E3D71246986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1FC084D4-695D-428B-98BB-7E3D71246986}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1FC084D4-695D-428B-98BB-7E3D71246986}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1FC084D4-695D-428B-98BB-7E3D71246986}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DADE4BA4-2659-4C5F-BCB2-2A3D730BD2BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DADE4BA4-2659-4C5F-BCB2-2A3D730BD2BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DADE4BA4-2659-4C5F-BCB2-2A3D730BD2BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
