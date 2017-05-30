@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cookbook.Models", "Cookbook
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cookbook.Business", "Cookbook.Business\Cookbook.Business.csproj", "{5E9BDC8B-2057-4428-9E0C-E6F4B1F223BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cookbook.Web", "Cookbook.Web\Cookbook.Web.csproj", "{D3B17556-5797-497C-B87D-E6D74D9DF307}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5E9BDC8B-2057-4428-9E0C-E6F4B1F223BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E9BDC8B-2057-4428-9E0C-E6F4B1F223BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E9BDC8B-2057-4428-9E0C-E6F4B1F223BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3B17556-5797-497C-B87D-E6D74D9DF307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3B17556-5797-497C-B87D-E6D74D9DF307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3B17556-5797-497C-B87D-E6D74D9DF307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3B17556-5797-497C-B87D-E6D74D9DF307}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
