@@ -113,6 +113,20 @@
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cookbook.Business\Cookbook.Business.csproj">
+      <Project>{5e9bdc8b-2057-4428-9e0c-e6f4b1f223bb}</Project>
+      <Name>Cookbook.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cookbook.DataAccess\Cookbook.DataAccess.csproj">
+      <Project>{6314104c-3907-4646-8e9e-0a3776fa0f63}</Project>
+      <Name>Cookbook.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cookbook.Models\Cookbook.Models.csproj">
+      <Project>{d3c3d2e7-d21f-4362-ac4f-a79144d5fae3}</Project>
+      <Name>Cookbook.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
