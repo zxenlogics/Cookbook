@@ -1,0 +1,11 @@
+BEGIN TRAN
+DELETE dbo.[TeamMember]
+DELETE dbo.[Team]
+DELETE dbo.[User]
+ROLLBACK TRAN
+
+BEGIN TRAN
+DROP TABLE dbo.[TeamMember]
+DROP TABLE dbo.[Team]
+DROP TABLE dbo.[User]
+ROLLBACK TRAN
