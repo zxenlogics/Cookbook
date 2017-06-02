@@ -1,0 +1,79 @@
+@{
+            var grid = Html.DevExpress().GridView(settings => {
+            settings.Name = "EnvironmentGridView";
+            settings.CallbackRouteValues = new { Controller = "Environment", Action = "EnvironmentGridViewPartial" };
+
+            settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Environment", Action = "EnvironmentGridViewPartialAddNew" };
+            settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Environment", Action = "EnvironmentGridViewPartialUpdate" };
+            settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Environment", Action = "EnvironmentGridViewPartialDelete" };
+            settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+            settings.SettingsBehavior.ConfirmDelete = true;
+
+            settings.CommandColumn.Visible = false;
+            //settings.CommandColumn.ShowNewButton = true;
+            //settings.CommandColumn.ShowDeleteButton = true;
+            //settings.CommandColumn.ShowEditButton = true;
+
+            settings.KeyFieldName = "Host";
+
+            settings.SettingsPager.Visible = true;
+            //settings.Settings.ShowGroupPanel = true;
+            //settings.Settings.ShowFilterRow = true;
+            settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+            settings.SettingsAdaptivity.AdaptivityMode = GridViewAdaptivityMode.Off;
+            settings.SettingsAdaptivity.AdaptiveColumnPosition = GridViewAdaptiveColumnPosition.Left;
+            settings.SettingsAdaptivity.AdaptiveDetailColumnCount = 1;
+            settings.SettingsAdaptivity.AllowOnlyOneAdaptiveDetailExpanded = false;
+            settings.SettingsAdaptivity.HideDataCellsAtWindowInnerWidth = 0;
+
+            settings.Settings.ShowHeaderFilterButton = true;
+            settings.SettingsPopup.HeaderFilter.Height = 200;
+
+            settings.Columns.Add(column =>
+            {
+                column.Caption = "Options";
+            });
+
+            settings.Columns.Add("Team").SettingsHeaderFilter.Mode = GridHeaderFilterMode.CheckedList;
+            settings.Columns.Add("Project").SettingsHeaderFilter.Mode = GridHeaderFilterMode.CheckedList;
+            settings.Columns.Add("Branch").SettingsHeaderFilter.Mode = GridHeaderFilterMode.CheckedList;
+            settings.Columns.Add("Host").SettingsHeaderFilter.Mode = GridHeaderFilterMode.CheckedList;
+            settings.Columns.Add("TargetVersion").SettingsHeaderFilter.Mode = GridHeaderFilterMode.CheckedList;
+            settings.Columns.Add("State").SettingsHeaderFilter.Mode = GridHeaderFilterMode.CheckedList;
+            settings.Columns.Add("Database").SettingsHeaderFilter.Mode = GridHeaderFilterMode.CheckedList;
+            settings.Columns.Add("LastUpdate");
+            settings.Columns.Add("Client").SettingsHeaderFilter.Mode = GridHeaderFilterMode.CheckedList;
+            settings.Columns.Add("Notes");
+
+
+            settings.FormatConditions.AddHighlight("State", "[State] == 'Error'", GridConditionHighlightFormat.LightRedFillWithDarkRedText);
+
+
+            settings.SetDataRowTemplateContent(c =>
+            {
+            ViewContext.Writer.Write("<tr class=\"dxgvDataRow\">" +
+                                     $"<td class=\"dxgv\" style=\"border-bottom-width:0px;\"><div class=\"dropdown\"><button class=\"btn btn-primary dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\"><span class=\"glyphicon glyphicon-menu-hamburger\" aria-hidden=\"true\" id=\"menu{DataBinder.Eval(c.DataItem, "Id")}\"></span></button>" +
+                                     $"<ul class=\"dropdown-menu\" style=\"position:fixed; top:0; margin-top:100px; margin-left:200px; \"><li><a href = \"#\" >Start Build for {DataBinder.Eval(c.DataItem, "Branch")}</a ></li ><li ><a href=\"#\">Deploy to {DataBinder.Eval(c.DataItem, "Host")}</a></li><li><a href = \"#\" >Do something...</a></li></ul></div></td>" +
+                                     $"<td class=\"dxgv\" style=\"border-bottom-width:0px;\">{DataBinder.Eval(c.DataItem, "Team")}</td>" +
+                                     $"<td class=\"dxgv\" style=\"border-bottom-width:0px;\">{DataBinder.Eval(c.DataItem, "Project")}</td>" +
+                                     $"<td class=\"dxgv\" style=\"border-bottom-width:0px;\">{DataBinder.Eval(c.DataItem, "Branch")}</td>" +
+                                     $"<td class=\"dxgv\" style=\"border-bottom-width:0px;\">{DataBinder.Eval(c.DataItem, "Host")}</td>" +
+                                     $"<td class=\"dxgv\" style=\"border-bottom-width:0px;\">{DataBinder.Eval(c.DataItem, "TargetVersion")}</td>" +
+                                     $"<td class=\"dxgv\" style=\"border-bottom-width:0px;\">{DataBinder.Eval(c.DataItem, "State")}</td>" +
+                                     $"<td class=\"dxgv\" style=\"border-bottom-width:0px;\">{DataBinder.Eval(c.DataItem, "Database")}</td>" +
+                                     $"<td class=\"dxgv\" style=\"border-bottom-width:0px;\">{DataBinder.Eval(c.DataItem, "LastUpdate")}</td>" +
+                                     $"<td class=\"dxgv\" style=\"border-bottom-width:0px;\">{DataBinder.Eval(c.DataItem, "Client")}</td>" +
+                                     $"<td class=\"dxgv\" style=\"border-right-width:0px;border-bottom-width:0px;\">{DataBinder.Eval(c.DataItem, "Notes")}</td>" +
+                                     "</tr>");
+        });
+
+
+            });
+
+
+    if (ViewData["EditError"] != null){
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()
