@@ -8,6 +8,8 @@ namespace MC.Internal.DevOps.Entities
         [Required]
         public string Name { get; set; }
         public bool IsActive { get; set; }
+        public string Branch { get; set; }
+        public string ProjectType { get; set; }
 
         // Navigatin Properties.
         public virtual ICollection<Environment> Environments { get; set; }

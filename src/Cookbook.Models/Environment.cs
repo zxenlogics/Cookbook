@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -5,15 +6,14 @@ namespace MC.Internal.DevOps.Entities
 {
     public partial class Environment : BaseEntity
     {        
-        //public Environment()
-        //{
-        //    Databases = new HashSet<Database>();
-        //    Servers = new HashSet<Server>();
-        //}
-
         [Required]
         public string Name { get; set; }
         public bool IsCluster { get; set; }
+        public string State { get; set; }
+        public string CurrentVersion { get; set; }
+        public string TargetVersion { get; set; }
+        public string Notes { get; set; }
+        public DateTime LastUpdated { get; set; }
         public int ClientId { get; set; }                 
         public int EnvironmentTypeId { get; set; }
 

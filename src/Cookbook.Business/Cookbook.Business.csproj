@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DemoBusinessLogic.cs" />
+    <Compile Include="EnvironmentManager.cs" />
+    <Compile Include="IDemoBusinessLogic.cs" />
+    <Compile Include="IEnvironmentManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
