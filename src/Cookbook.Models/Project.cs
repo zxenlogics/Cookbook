@@ -6,13 +6,17 @@ namespace MC.Internal.DevOps.Entities
     public class Project : BaseEntity
     {
         [Required]
+        [MaxLength(50)]
         public string Name { get; set; }
         public bool IsActive { get; set; }
-        public string Branch { get; set; }
+        [MaxLength(20)]
         public string ProjectType { get; set; }
+        public int BranchId { get; set; }
+        public int EnvironmentId { get; set; }
 
-        // Navigatin Properties.
+        // Navigation Properties.        
+        public virtual ICollection<Team> Teams { get; set; }        
+        public virtual Branch Branch { get; set; }
         public virtual ICollection<Environment> Environments { get; set; }
-        public virtual ICollection<Team> Teams { get; set; }
     }
 }

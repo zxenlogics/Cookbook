@@ -1,17 +1,13 @@
-﻿using System;
+﻿using Microsoft.TeamFoundation.Core.WebApi;
+using Microsoft.VisualStudio.Services.WebApi;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using MC.Internal.DevOps.Entities;
 
 namespace MC.Internal.DevOps.MCDataAccess
 {
-    public interface IVSTSRepository
+    public interface IVstsRepository
     {
-        IEnumerable<Team> GetTeams();
-        IEnumerable<TeamMember> GetTeamMembers(Guid teamGuid);
+        List<WebApiTeam> GetTeamsAsync(string projectId);
+        List<IdentityRef> GetTeamMembersAsync(string projectId, string teamId);
 
     }
 }

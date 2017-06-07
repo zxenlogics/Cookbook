@@ -91,5 +91,10 @@
       <DependentUpon>201706012101349_ProjTweaks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\DeleteSeedData.sql" />
+    <Content Include="Scripts\DropAllTables.sql" />
+    <Content Include="Scripts\Seed.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,6 +17,14 @@ namespace MC.Internal.DevOps.MCDataAccess
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
+
+
+            modelBuilder.Entity<Environment>()
+                .HasOptional(p => p.Project);
+         
+            modelBuilder.Entity<Project>()
+                .HasRequired(x => x.Environments);
+
             //modelBuilder.Entity<Blog>()
             //.Property(b => b.Created)
             //.HasDefaultValueSql("getdate()");
@@ -32,12 +40,10 @@ namespace MC.Internal.DevOps.MCDataAccess
         public DbSet<Domain> Domains { get; set; }
         public DbSet<Server> Servers { get; set; }
         public DbSet<ServerRole> ServerRoles { get; set; }               
-        public DbSet<DBInstance> DBInstances { get; set; }
+        public DbSet<DbInstance> DbInstances { get; set; }
         public DbSet<MC.Internal.DevOps.Entities.Database> Databases { get; set; }
         public DbSet<Client> Clients { get; set; }
-
-        //public DbSet<DBEngine> DBEngines { get; set; }
-
-        // Consder: Release, Branch, Feature
+        public DbSet<Branch> Branches { get; set; }
+        //public DbSet<EnvironmentDatabase> EnvironmentDatabases { get; set; }
     }
 }

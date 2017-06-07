@@ -9,6 +9,26 @@ namespace MC.Internal.DevOps.MCDataAccess
 {
     public class EnvironmentRepo : BaseRepository, IEnvironmentRepo
     {
+        public EnvironmentRepo() : base()
+        {            
+            _context = new MCDbContext();
+        }
+
+        public EnvironmentRepo(MCDbContext context)
+        {
+            this._context = context;
+        }
+        public IEnumerable<Environment> GetEnvironments()
+        {
+            return _context.Environments;
+        }
+
+        public IEnumerable<Environment> GetEnvironments(int pageSize, int pageIndex)
+        {
+            throw new NotImplementedException();
+        }
+
+        #region << Mock Data >>
         public IEnumerable<Environment> GetEnvironmentsByTeamMemberId(string guid)
         {
             List<Environment> envList = new List<Environment>()
@@ -18,7 +38,7 @@ namespace MC.Internal.DevOps.MCDataAccess
                     Id = 1, Name = "QA Test 1", State = "Ready", EnvironmentType = new EnvironmentType() { Id = 1, Name = "QA"},
                     IsCluster = true, LastUpdated = DateTime.Now.AddDays(-4), ClientId = 1, EnvironmentTypeId = 1,
                     Notes = "First up", Client = new Client() { Id = 1, Abbreviation = "MSSB", Name = "Morgan Stanley Smith Barney"},
-                    Servers = GetServers().ToList(), Projects = GetProjects().ToList(), CurrentVersion = "8.1.50.00000",
+                    Servers = GetServers().ToList(), CurrentVersion = "8.1.50.00000",
                     TargetVersion = "8.2.60.57420"
                 },
                 new Environment()
@@ -26,7 +46,7 @@ namespace MC.Internal.DevOps.MCDataAccess
                     Id = 2, Name = "QA Test 2", State = "Failed", EnvironmentType = new EnvironmentType() { Id = 2, Name = "Test"},
                     IsCluster = true, LastUpdated = DateTime.Now.AddDays(-10), ClientId = 2, EnvironmentTypeId = 2,
                     Notes = "Second up", Client = new Client() { Id = 2, Abbreviation = "LT", Name = "Lending Tree"},
-                    Servers = GetServers().ToList(), Projects = GetProjects().ToList(), CurrentVersion = "8.4.70.00022",
+                    Servers = GetServers().ToList(), CurrentVersion = "8.4.70.00022",
                     TargetVersion = "9.0.0.55656"
                 }
             };
@@ -64,6 +84,7 @@ namespace MC.Internal.DevOps.MCDataAccess
 
             return projects;
         }
+        #endregion
 
     }
 }

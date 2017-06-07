@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using MC.Internal.DevOps.Entities;
 
-namespace MC.Internal.DevOps.BusinessLogic
+namespace MC.Internal.DevOps.MCBusinessLogic
 {
     public interface IDemoBusinessLogic
     {

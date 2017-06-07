@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using MC.Internal.DevOps.Entities;
 using MC.Internal.DevOps.MCDataAccess;
 
-namespace MC.Internal.DevOps.BusinessLogic
+namespace MC.Internal.DevOps.MCBusinessLogic
 {
     public class DemoBusinessLogic : IDemoBusinessLogic
     {

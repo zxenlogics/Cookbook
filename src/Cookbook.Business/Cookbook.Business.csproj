@@ -44,7 +44,9 @@
     <Compile Include="EnvironmentManager.cs" />
     <Compile Include="IDemoBusinessLogic.cs" />
     <Compile Include="IEnvironmentManager.cs" />
+    <Compile Include="IVstsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VstsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cookbook.DataAccess\Cookbook.DataAccess.csproj">

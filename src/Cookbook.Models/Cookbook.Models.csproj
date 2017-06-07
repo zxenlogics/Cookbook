@@ -55,6 +55,7 @@
     <Compile Include="DBInstance.cs" />
     <Compile Include="Domain.cs" />
     <Compile Include="Environment.cs" />
+    <Compile Include="EnvironmentDatabase.cs" />
     <Compile Include="EnvironmentType.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

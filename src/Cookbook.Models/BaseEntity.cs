@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MC.Internal.DevOps.Entities
 {
-    public class BaseEntity
+    public abstract class BaseEntity
     {
         public BaseEntity()
         {

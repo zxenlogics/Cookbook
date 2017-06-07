@@ -6,19 +6,14 @@ using System.Data.Entity.Spatial;
 
 namespace MC.Internal.DevOps.Entities
 {
-    public partial class DBInstance : BaseEntity
+    public class DbInstance : BaseEntity
     {        
-        //public DBInstance()
-        //{
-        //    Databases = new HashSet<Database>();
-        //    DBEngines = new HashSet<DBEngine>();
-        //}
-
         [Required]
+        [MaxLength(100)]
         public string Name { get; set; }
-
-        public int DBEngineId { get; set; }
-        public string DBEngine { get; set; }
+        public int DbEngineId { get; set; }
+        [MaxLength(100)]
+        public string DbEngine { get; set; }
         public int ServerId { get; set; }
 
         public virtual ICollection<Database> Databases { get; set; }    
