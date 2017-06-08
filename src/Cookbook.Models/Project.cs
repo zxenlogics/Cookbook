@@ -11,8 +11,7 @@ namespace MC.Internal.DevOps.Entities
         public bool IsActive { get; set; }
         [MaxLength(20)]
         public string ProjectType { get; set; }
-        public int BranchId { get; set; }
-        public int EnvironmentId { get; set; }
+        public int BranchId { get; set; }        
 
         // Navigation Properties.        
         public virtual ICollection<Team> Teams { get; set; }        
